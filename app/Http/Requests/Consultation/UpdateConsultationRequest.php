@@ -1,14 +1,14 @@
 <?php
 
-namespace App\Http\Requests\Specialist;
+namespace App\Http\Requests\Consultation;
 
-use App\Models\MasterData\Specialist;
+use App\Models\MasterData\Consultation;
 
 use Symfony\Component\HttpFoundation\Response;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
 
-class UpdateSpecialistRequest extends FormRequest
+class UpdateConsultationRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -17,7 +17,7 @@ class UpdateSpecialistRequest extends FormRequest
      */
     public function authorize()
     {
-        // create middleware from kernel at here
+        // create middlware from kernel at here
         return true;
     }
 
@@ -30,10 +30,7 @@ class UpdateSpecialistRequest extends FormRequest
     {
         return [
             'name' => [
-                'required', 'string', 'max:255', Rule::unique('specialist')->ignore($this->specialist)
-            ],
-            'price' => [
-                'required', 'string', 'max:255'
+                'required', 'string', 'max:255', Rule::unique('consultation')->ignore($this->consultation)
             ]
         ];
     }

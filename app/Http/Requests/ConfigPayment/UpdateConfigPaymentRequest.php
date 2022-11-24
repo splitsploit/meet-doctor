@@ -1,14 +1,12 @@
 <?php
 
-namespace App\Http\Requests\Specialist;
+namespace App\Http\Requests\ConfigPayment;
 
-use App\Models\MasterData\Specialist;
+use App\Models\MasterData\ConfigPayment;
 
-use Symfony\Component\HttpFoundation\Response;
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Validation\Rule;
 
-class UpdateSpecialistRequest extends FormRequest
+class UpdateConfigPaymentRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -29,10 +27,10 @@ class UpdateSpecialistRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => [
-                'required', 'string', 'max:255', Rule::unique('specialist')->ignore($this->specialist)
+            'fee' => [
+                'required', 'string', 'max:255'
             ],
-            'price' => [
+            'vat' => [
                 'required', 'string', 'max:255'
             ]
         ];
