@@ -10,7 +10,7 @@
 
         <!-- Logo Brand -->
         <a
-          href="../../index.html"
+          href="{{ route('index') }}"
           class="flex-shrink-0 inline-flex items-center"
         >
           <img
@@ -30,47 +30,73 @@
           <div class="mt-12">
 
             <!-- Form input -->
-            <form action="" class="grid gap-6">
-              <label class="block">
-                <input
-                  type="text"
-                  class="block w-full rounded-full py-4 text-[#1E2B4F] font-medium placeholder:text-[#AFAEC3] placeholder:font-normal px-7 border border-[#d4d4d4] focus:outline-none focus:border-[#0D63F3]"
-                  placeholder="Complete Name"
-                />
-              </label>
+            <form action="{{ route('register') }}" method="POST" class="grid gap-6">
+
+              @csrf
 
               <label class="block">
+                <input
+                  for="name" type="text" id="name" name="name"
+                  class="block w-full rounded-full py-4 text-[#1E2B4F] font-medium placeholder:text-[#AFAEC3] placeholder:font-normal px-7 border border-[#d4d4d4] focus:outline-none focus:border-[#0D63F3]"
+                  placeholder="Complete Name" value="{{ old('name') }}" required autofocus
+                />
+
+                @if ($errors->has('name'))
+                    <p class="text-red mb-3 text-sm">{{ $errors->first('name') }}</p>
+                @endif
+
+              </label>
+
+              {{-- <label class="block">
                 <input
                   type="text"
                   class="block w-full rounded-full py-4 text-[#1E2B4F] font-medium placeholder:text-[#AFAEC3] placeholder:font-normal px-7 border border-[#d4d4d4] focus:outline-none focus:border-[#0D63F3]"
                   placeholder="Age"
                 />
+              </label> --}}
+
+              <label class="block">
+                <input
+                  for="email" type="email" id="email" name="email"
+                  class="block w-full rounded-full py-4 text-[#1E2B4F] font-medium placeholder:text-[#AFAEC3] placeholder:font-normal px-7 border border-[#d4d4d4] focus:outline-none focus:border-[#0D63F3]"
+                  placeholder="Email Address" value="{{ old('email') }}" required autofocus
+                />
+
+                @if ($errors->has('email'))
+                    <p class="text-red mb-3 text-sm">{{ $errors->first('email') }}</p>
+                @endif
+
               </label>
 
               <label class="block">
                 <input
-                  type="email"
+                  for="password" type="password" id="password" name="password"
                   class="block w-full rounded-full py-4 text-[#1E2B4F] font-medium placeholder:text-[#AFAEC3] placeholder:font-normal px-7 border border-[#d4d4d4] focus:outline-none focus:border-[#0D63F3]"
-                  placeholder="Email Address"
+                  placeholder="Password" value="{{ old('password') }}" required autofocus
                 />
               </label>
 
               <label class="block">
                 <input
-                  type="password"
+                  for="password_confirmation" type="password" id="password_confirmation" name="password_confirmation"
                   class="block w-full rounded-full py-4 text-[#1E2B4F] font-medium placeholder:text-[#AFAEC3] placeholder:font-normal px-7 border border-[#d4d4d4] focus:outline-none focus:border-[#0D63F3]"
-                  placeholder="Password"
+                  placeholder="Confirmation Password" required autofocus
                 />
+
+                @if ($errors->has('password'))
+                    <p class="text-red mb-3 text-sm">{{ $errors->first('password') }}</p>
+                @endif
+
               </label>
               
               <div class="mt-10 grid gap-6">
-                <a href="sign-up-success.html"
+                <button type="submit"
                   class="text-center text-white text-lg font-medium bg-[#0D63F3] px-10 py-4 rounded-full"
                 >
                   Continue
-                </a>
+                </button>
                 <a
-                  href="sign-in.html"
+                  href="{{ route('login') }}"
                   class="text-center text-lg text-[#1E2B4F] font-medium bg-[#F2F6FE] px-10 py-4 rounded-full"
                 >
                   Sign In
