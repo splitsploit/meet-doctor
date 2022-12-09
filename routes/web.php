@@ -48,3 +48,11 @@ Route::group(['prefix' => 'backsite', 'as' => 'backsite.', 'middleware' => ['aut
     Route::resource('dashboard', DashboardController::class);
 
 } );
+
+// Route::get('/success', function(){
+//     return view('pages.frontsite.success.payment-success');
+// });
+
+// Route::get('/success-signup', function(){
+//     return view('pages.frontsite.success.signup-success');
+// });
