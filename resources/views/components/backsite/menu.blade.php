@@ -13,32 +13,12 @@
                         </li>
                     </ul>
                 </li>
-                <li class=" nav-item"><a href="#"><i class="la la-television"></i><span class="menu-title" data-i18n="Templates">Templates</span></a>
+                <li class=" nav-item"><a href="#"><i class="la la-television"></i><span class="menu-title" data-i18n="Templates">Management Access</span></a>
                     <ul class="menu-content">
-                        <li><a class="menu-item" href="#"><i></i><span data-i18n="Vertical">Vertical</span></a>
-                            <ul class="menu-content">
-                                <li><a class="menu-item" href="../vertical-menu-template"><i></i><span data-i18n="Classic Menu">Classic Menu</span></a>
-                                </li>
-                                <li><a class="menu-item" href="../vertical-modern-menu-template"><i></i><span data-i18n="Modern Menu">Modern Menu</span></a>
-                                </li>
-                                <li><a class="menu-item" href="../vertical-collapsed-menu-template"><i></i><span data-i18n="Collapsed Menu">Collapsed Menu</span></a>
-                                </li>
-                                <li><a class="menu-item" href="../vertical-compact-menu-template"><i></i><span data-i18n="Compact Menu">Compact Menu</span></a>
-                                </li>
-                                <li><a class="menu-item" href="../vertical-content-menu-template"><i></i><span data-i18n="Content Menu">Content Menu</span></a>
-                                </li>
-                                <li><a class="menu-item" href="../vertical-overlay-menu-template"><i></i><span data-i18n="Overlay Menu">Overlay Menu</span></a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li><a class="menu-item" href="#"><i></i><span data-i18n="Horizontal">Horizontal</span></a>
-                            <ul class="menu-content">
-                                <li><a class="menu-item" href="../horizontal-menu-template"><i></i><span data-i18n="Classic">Classic</span></a>
-                                </li>
-                                <li><a class="menu-item" href="../horizontal-menu-template-nav"><i></i><span data-i18n="Full Width">Full Width</span></a>
-                                </li>
-                            </ul>
-                        </li>
+                        <li><a class="menu-item" href="permission"><i></i><span data-i18n="Vertical">Permission</span></a><li>
+                        <li><a class="menu-item" href="role"><i></i><span data-i18n="Horizontal">Role</span></a></li>
+                        <li><a class="menu-item" href="#"><i></i><span data-i18n="Horizontal">User</span></a></li>
+                        <li><a class="menu-item" href="#"><i></i><span data-i18n="Horizontal">User Type</span></a></li>
                     </ul>
                 </li>
                 <li class=" navigation-header"><span>Admin Panels</span><i class="la la-ellipsis-h" data-toggle="tooltip" data-placement="right" data-original-title="Admin Panels"></i>

@@ -6,6 +6,8 @@ use App\Http\Controllers\Frontsite\LandingController;
 use App\Http\Controllers\Frontsite\AppointmentController;
 use App\Http\Controllers\Frontsite\PaymentController;
 use App\Http\Controllers\Backsite\DashboardController;
+use App\Http\Controllers\Backsite\PermissionController;
+use App\Http\Controllers\Backsite\RoleController;
 
 /*
 |--------------------------------------------------------------------------
@@ -45,7 +47,15 @@ Route::group(['middleware' => ['auth:sanctum', 'verified']], function(){
 
 Route::group(['prefix' => 'backsite', 'as' => 'backsite.', 'middleware' => ['auth:sanctum', 'verified']], function () {
     
+    // dashboard
     Route::resource('dashboard', DashboardController::class);
+
+    // permission
+    // Route::post('permission', [PermissionController::class, 'index'])->name('permission');
+    Route::resource('permission', PermissionController::class);
+
+    // role
+    Route::resource('role', RoleController::class);
 
 } );
 
