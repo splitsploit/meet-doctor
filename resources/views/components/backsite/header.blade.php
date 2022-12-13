@@ -17,6 +17,7 @@
                         <li class="nav-item d-none d-lg-block"><a class="nav-link nav-link-expand" href="#"><i class="ficon ft-maximize"></i></a></li>
 
                     </ul>
+                    <a href="{{ route('index') }}" class="btn btn-warning">Frontsite</a>
                     <ul class="nav navbar-nav float-right">
                         <li class="dropdown dropdown-notification nav-item"><a class="nav-link nav-link-label" href="#" data-toggle="dropdown"><i class="ficon ft-bell"></i><span class="badge badge-pill badge-danger badge-up badge-glow">5</span></a>
                             <ul class="dropdown-menu dropdown-menu-media dropdown-menu-right">
