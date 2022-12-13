@@ -17,8 +17,8 @@
                     <ul class="menu-content">
                         <li><a class="menu-item" href="permission"><i></i><span data-i18n="Vertical">Permission</span></a><li>
                         <li><a class="menu-item" href="role"><i></i><span data-i18n="Horizontal">Role</span></a></li>
-                        <li><a class="menu-item" href="#"><i></i><span data-i18n="Horizontal">User</span></a></li>
-                        <li><a class="menu-item" href="#"><i></i><span data-i18n="Horizontal">User Type</span></a></li>
+                        <li><a class="menu-item" href="user"><i></i><span data-i18n="Horizontal">User</span></a></li>
+                        <li><a class="menu-item" href="type-user"><i></i><span data-i18n="Horizontal">Type User</span></a></li>
                     </ul>
                 </li>
                 <li class=" navigation-header"><span>Admin Panels</span><i class="la la-ellipsis-h" data-toggle="tooltip" data-placement="right" data-original-title="Admin Panels"></i>

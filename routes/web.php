@@ -8,6 +8,8 @@ use App\Http\Controllers\Frontsite\PaymentController;
 use App\Http\Controllers\Backsite\DashboardController;
 use App\Http\Controllers\Backsite\PermissionController;
 use App\Http\Controllers\Backsite\RoleController;
+use App\Http\Controllers\Backsite\UserController;
+use App\Http\Controllers\Backsite\TypeUserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -56,6 +58,12 @@ Route::group(['prefix' => 'backsite', 'as' => 'backsite.', 'middleware' => ['aut
 
     // role
     Route::resource('role', RoleController::class);
+
+    // user
+    Route::resource('user', UserController::class);
+
+    // user type
+    Route::resource('type-user', TypeUserController::class);
 
 } );
 
