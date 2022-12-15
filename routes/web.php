@@ -8,6 +8,7 @@ use App\Http\Controllers\Frontsite\PaymentController;
 use App\Http\Controllers\Backsite\DashboardController;
 use App\Http\Controllers\Backsite\PermissionController;
 use App\Http\Controllers\Backsite\RoleController;
+use App\Http\Controllers\Backsite\SpecialistController;
 use App\Http\Controllers\Backsite\UserController;
 use App\Http\Controllers\Backsite\TypeUserController;
 
@@ -53,7 +54,7 @@ Route::group(['prefix' => 'backsite', 'as' => 'backsite.', 'middleware' => ['aut
     Route::resource('dashboard', DashboardController::class);
 
     // permission
-    // Route::post('permission', [PermissionController::class, 'index'])->name('permission');
+    // Route::get('permission', [PermissionController::class, 'index'])->name('permission');
     Route::resource('permission', PermissionController::class);
 
     // role
@@ -64,6 +65,9 @@ Route::group(['prefix' => 'backsite', 'as' => 'backsite.', 'middleware' => ['aut
 
     // user type
     Route::resource('type-user', TypeUserController::class);
+
+    // specialist
+    Route::resource('specialist', SpecialistController::class);
 
 } );
 

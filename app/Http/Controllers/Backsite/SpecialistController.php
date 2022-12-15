@@ -10,9 +10,12 @@ use Symfony\Component\HttpFoundation\Response;
 use Gate;
 use Auth;
 
-use App\Models\ManagementAccess\Role;
+use App\Http\Requests\Specialist\StoreSpecialistRequest;
+use App\Http\Requests\Specialist\UpdateSpecialistRequest;
 
-class RoleController extends Controller
+use App\Models\MasterData\Specialist;
+
+class SpecialistController extends Controller
 {
 
     public function __construct()
@@ -27,7 +30,10 @@ class RoleController extends Controller
      */
     public function index()
     {
-        return view('pages.backsite.management-access.role.index');
+        $data = Specialist::orderBy('created_at', 'desc')->get();
+        dd($data);
+
+        return view('pages.backsite.master-data.specialist.index', compact('specialist'));
     }
 
     /**
@@ -46,9 +52,13 @@ class RoleController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreSpecialistRequest $request)
     {
-        //
+        // $data = $request['name'];
+
+        $data = $request->all();
+
+        $specialist = Specialist::create($data);
     }
 
     /**

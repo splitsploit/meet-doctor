@@ -4,6 +4,13 @@ namespace App\Http\Controllers\Backsite;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+use Symfony\Component\HttpFoundation\Response;
+
+use Gate;
+use Auth;
+
+use App\Models\MasterData\TypeUser;
 
 class TypeUserController extends Controller
 {
@@ -20,7 +27,17 @@ class TypeUserController extends Controller
      */
     public function index()
     {
-        return view('pages.backsite.management-access.type-user.index');
+        // $data = TypeUser::where('id', 1)->first();
+
+        // dd($data);
+
+        // $data = TypeUser::orderBy('created_at', 'desc')->limit(3)->get();
+
+        $data = TypeUser::all();
+        dd($data);
+        return view('pages.backsite.management-access.type-user.index', compact('type_user'));
+
+        // return view('pages.backsite.management-access.type-user.index');
     }
 
     /**

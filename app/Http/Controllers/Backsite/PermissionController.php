@@ -4,6 +4,13 @@ namespace App\Http\Controllers\Backsite;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+use Symfony\Component\HttpFoundation\Response;
+
+use Gate;
+use Auth;
+
+use App\Models\ManagementAccess\Permission;
 
 class PermissionController extends Controller
 {
