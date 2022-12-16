@@ -14,14 +14,23 @@
     </head>
 
     <body class="vertical-layout vertical-menu 2-columns   fixed-navbar" data-open="click" data-menu="vertical-menu">
+
+        @include('sweetalert::alert')
+
         @include('components.backsite.header')
+
         @include('components.backsite.menu')
-            @yield('content')
+
+        @yield('content')
+
         @include('components.backsite.footer')
 
         @stack('before-script')
+
             @include('includes.backsite.script')
+
         @stack('after-script')
+        
     </body>
 
 </html>

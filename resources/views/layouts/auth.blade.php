@@ -14,8 +14,10 @@
 
     </head>
     <body>
+
+        @include('sweetalert::alert')
         
-            @yield('content')
+        @yield('content')
 
         @include('components.frontsite.footer')
 
@@ -24,5 +26,6 @@
             @include('includes.frontsite.style')
 
         @stack('after-script')
+        
     </body>
 </html>
