@@ -10,12 +10,12 @@ use Symfony\Component\HttpFoundation\Response;
 use Gate;
 use Auth;
 
-use App\Http\Requests\Specialist\StoreSpecialistRequest;
-use App\Http\Requests\Specialist\UpdateSpecialistRequest;
+use App\Http\Requests\Consultation\StoreConsultationRequest;
+use App\Http\Requests\Consultation\UpdateConsultationRequest;
 
-use App\Models\MasterData\Specialist;
+use App\Models\MasterData\Consultation;
 
-class SpecialistController extends Controller
+class ConsultationController extends Controller
 {
 
     public function __construct()
@@ -30,10 +30,10 @@ class SpecialistController extends Controller
      */
     public function index()
     {
-        $data = Specialist::orderBy('created_at', 'desc')->get();
+        $data = Consultation::orderBy('created_at', 'desc')->get();
         dd($data);
 
-        return view('pages.backsite.master-data.specialist.index', compact('specialist'));
+        return view('pages.backsite.master-data.consultation.index', compact('consultation'));
     }
 
     /**
@@ -52,22 +52,14 @@ class SpecialistController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreSpecialistRequest $request)
+    public function store(StoreConsultationRequest $request)
     {
-        // $data = $request['name'];
-
         $data = $request->all();
 
-        $specialist = Specialist::create($data);
-
-        alert()->success('Success Message', 'Successfully added new Specialist');
-        return redirect()->route('backsite.specialist.index');
-
-        // bisa juga menggunakan cara seperti dibawah ini
-
-        // $specialist = new Specialist;
-        // $specialist->name = $request->name;
-        // $specialist->save();
+        $consultation = Consultation::create($data);
+        
+        alert()->success('Message Success', 'Success added new Consultation');
+        return redirect()->route('backsite.consultation.index');
     }
 
     /**
@@ -76,11 +68,9 @@ class SpecialistController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Specialist $specialist)
+    public function show(Consultation $consultation)
     {
-        // dd($specialist);
-
-        return view('pages.backsite.master-data.specialist.show', compact('specialist'));
+        return view('pages.backsite.master-data.consultation.show', compact('consultaion'));
     }
 
     /**
@@ -89,11 +79,9 @@ class SpecialistController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Specialist $specialist)
+    public function edit(Consultation $consultation)
     {
-        // dd($specialist);
-
-        return view('pages.backsite.master-data.specialist.edit', compact('specialist'));
+        return view('pages.backsite.master-data.consultation.edit', compact('consultation'));
     }
 
     /**
@@ -103,14 +91,15 @@ class SpecialistController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateSpecialistRequest $request, Specialist $specialist)
+    public function update(UpdateConsultationRequest $request, Consultation $consultation)
     {
         $data = $request->all();
 
-        $specialist->update($data);
+        $consultation = Consultation::create($data);
 
-        alert()->success('Success Message', 'Successfully update Specialist');
-        return redirect()->route('backsite.specialist.index');
+        alert()->success('Message Success', 'Successfully edit consultation');
+
+        return redirect()->route('backsite.consultation.index');
     }
 
     /**
@@ -119,14 +108,14 @@ class SpecialistController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Specialist $specialist)
+    public function destroy(Consultation $consultation)
     {
-        $data = Specialist::find(1);
+        $data = Consultation::find(1);
 
         $data->delete();
 
-        alert('Success Message', 'Successfully delete data');
-
+        alert()->success('Success Message', 'Successfully delete data');
+        
         return back();
     }
 }

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Backsite\ConsultationController;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\Frontsite\LandingController;
@@ -11,6 +12,7 @@ use App\Http\Controllers\Backsite\RoleController;
 use App\Http\Controllers\Backsite\SpecialistController;
 use App\Http\Controllers\Backsite\UserController;
 use App\Http\Controllers\Backsite\TypeUserController;
+use App\Models\MasterData\Consultation;
 
 /*
 |--------------------------------------------------------------------------
@@ -68,6 +70,9 @@ Route::group(['prefix' => 'backsite', 'as' => 'backsite.', 'middleware' => ['aut
 
     // specialist
     Route::resource('specialist', SpecialistController::class);
+
+    // consultation
+    Route::resource('consultation', ConsultationController::class);
 
 } );
 
