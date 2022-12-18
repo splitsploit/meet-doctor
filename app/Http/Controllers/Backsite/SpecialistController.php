@@ -123,7 +123,7 @@ class SpecialistController extends Controller
     {
         $data = Specialist::find(1);
 
-        $data->delete();
+        $data->forceDelete();
 
         alert('Success Message', 'Successfully delete data');
 

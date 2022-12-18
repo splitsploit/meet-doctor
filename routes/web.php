@@ -7,6 +7,7 @@ use App\Http\Controllers\Frontsite\LandingController;
 use App\Http\Controllers\Frontsite\AppointmentController;
 use App\Http\Controllers\Frontsite\PaymentController;
 use App\Http\Controllers\Backsite\DashboardController;
+use App\Http\Controllers\Backsite\DoctorController;
 use App\Http\Controllers\Backsite\PermissionController;
 use App\Http\Controllers\Backsite\RoleController;
 use App\Http\Controllers\Backsite\SpecialistController;
@@ -73,6 +74,9 @@ Route::group(['prefix' => 'backsite', 'as' => 'backsite.', 'middleware' => ['aut
 
     // consultation
     Route::resource('consultation', ConsultationController::class);
+
+    // doctor
+    Route::resource('doctor', DoctorController::class);
 
 } );
 

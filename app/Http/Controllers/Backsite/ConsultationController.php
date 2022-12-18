@@ -112,7 +112,7 @@ class ConsultationController extends Controller
     {
         $data = Consultation::find(1);
 
-        $data->delete();
+        $data->forceDelete();
 
         alert()->success('Success Message', 'Successfully delete data');
         

@@ -34,6 +34,8 @@ class DoctorController extends Controller
         // for table grid
         $doctor = Doctor::orderBy('created_at', 'desc')->get();
 
+        // dd($doctor);
+
         // for select2 = ascending A to Z
         $specialist = Specialist::orderBy('name', 'asc')->get();
 
@@ -56,9 +58,15 @@ class DoctorController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreDoctorRequest $request)
     {
-        //
+        $data = $request->all();
+
+        $doctor = Doctor::create($data);
+
+        alert()->success('Success Message', 'Successfully added new Doctor');
+
+        return redirect()->route('backsite.doctor.index');
     }
 
     /**
@@ -67,9 +75,9 @@ class DoctorController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Doctor $doctor)
     {
-        //
+        return view('pages.backsite.operational.doctor.show', compact('doctor'));
     }
 
     /**
@@ -78,9 +86,12 @@ class DoctorController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Doctor $doctor)
     {
-        //
+        //for select2 = ascending A to Z
+        $specialist = Specialist::orderBy('name', 'asc')->get();
+
+        return view('pages.backsite.operational.doctor.edit', compact('doctor', 'specialist'));
     }
 
     /**
@@ -90,9 +101,15 @@ class DoctorController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UpdateDoctorRequest $request, Doctor $doctor)
     {
-        //
+        $data = $request->all();
+
+        $doctor = Doctor::create($data);
+
+        alert()->success('Message Success', 'Successfully update Doctor');
+
+        return redirect()->route('backsite.doctor.index');
     }
 
     /**
@@ -101,8 +118,14 @@ class DoctorController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Doctor $doctor)
     {
-        //
+        $data = Doctor::find(1);
+
+        $data->forceDelete();
+
+        alert()->success('Message Success', 'Successfully delete Doctor');
+
+        return back();
     }
 }
