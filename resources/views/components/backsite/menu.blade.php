@@ -18,6 +18,13 @@
                         <li><a class="menu-item" href="permission"><i></i><span data-i18n="Vertical">Permission</span></a><li>
                         <li><a class="menu-item" href="role"><i></i><span data-i18n="Horizontal">Role</span></a></li>
                         <li><a class="menu-item" href="user"><i></i><span data-i18n="Horizontal">User</span></a></li>
+                    </ul>
+                </li>
+                <li class=" nav-item"><a href="#"><i class="la la-television"></i><span class="menu-title" data-i18n="Templates">Master Data</span></a>
+                    <ul class="menu-content">
+                        <li><a class="menu-item" href="config-payment"><i></i><span data-i18n="Vertical">Config Payment</span></a><li>
+                        <li><a class="menu-item" href="consultation"><i></i><span data-i18n="Horizontal">Consultation</span></a></li>
+                        <li><a class="menu-item" href="specialist"><i></i><span data-i18n="Horizontal">Specialist</span></a></li>
                         <li><a class="menu-item" href="type-user"><i></i><span data-i18n="Horizontal">Type User</span></a></li>
                     </ul>
                 </li>

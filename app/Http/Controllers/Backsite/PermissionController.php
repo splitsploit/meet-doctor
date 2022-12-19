@@ -27,6 +27,10 @@ class PermissionController extends Controller
      */
     public function index()
     {
+        $data = Permission::orderBy('created_at', 'desc')->get();
+
+        // dd($data);
+
         return view('pages.backsite.management-access.permission.index');
     }
 
@@ -57,9 +61,9 @@ class PermissionController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Permission $permission)
     {
-        //
+        return view('pages.backsite.management-access.permission.index', compact('permission'));
     }
 
     /**

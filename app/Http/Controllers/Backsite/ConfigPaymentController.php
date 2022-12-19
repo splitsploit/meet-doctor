@@ -10,14 +10,12 @@ use Symfony\Component\HttpFoundation\Response;
 use Gate;
 use Auth;
 
-use App\Http\Requests\Role\StoreRoleRequest;
-use App\Http\Requests\Role\UpdateRoleRequest;
+use App\Http\Requests\ConfigPayment\UpdateConfigPaymentRequest;
 
-use App\Models\ManagementAccess\Role;
+use App\Models\MasterData\ConfigPayment;
 
-class RoleController extends Controller
+class ConfigPaymentController extends Controller
 {
-
     public function __construct()
     {
         $this->middleware('auth');
@@ -30,11 +28,11 @@ class RoleController extends Controller
      */
     public function index()
     {
-        $data = Role::orderBy('created_at', 'desc')->get();
+        $data = ConfigPayment::orderBy('created_at', 'desc')->get();
 
-        dd($data);
+        // dd($data);
 
-        return view('pages.backsite.management-access.role.index');
+        return view('pages.backsite.master-data.config-payment.index', compact('config_payment'));
     }
 
     /**
@@ -53,15 +51,9 @@ class RoleController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreRoleRequest $request)
+    public function store(Request $request)
     {
-        $data = $request->all();
-
-        $data = Role::create($data);
-
-        alert()->success('Success Message', 'Successfully added new Role');
-
-        return redirect()->route('backsite.role.index');
+        //
     }
 
     /**
@@ -70,9 +62,10 @@ class RoleController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Role $role)
+    public function show(ConfigPayment $configPayment)
     {
-        return view('pages.backsite.management-access.role.index');
+        return view('pages.backsite.master-data.config-payment-show', compact('configPayment'));
+
     }
 
     /**
@@ -81,10 +74,9 @@ class RoleController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Role $role)
+    public function edit(ConfigPayment $configPayment)
     {
-        // dd($role);
-        return view('pages.backsite.management-access.role.edit', compact('role'));
+        return view('pages.backsite.master-data.config-payment-edit', compact('configPayment'));
     }
 
     /**
@@ -94,15 +86,9 @@ class RoleController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateRoleRequest $request, Role $role)
+    public function update(Request $request, $id)
     {
-        $data = $request->all();
-
-        $role->update($data);
-
-        alert()->success('Message Success', 'Successfully update new Role');
-
-        return redirect()->route('backsite.role.index');
+        //
     }
 
     /**
@@ -111,14 +97,8 @@ class RoleController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Role $role)
+    public function destroy($id)
     {
-        $data = Role::find(1);
-
-        $data->forceDelete();
-
-        alert()->success('Success Message', 'Successfully delete data');
-
-        return back();
+        //
     }
 }

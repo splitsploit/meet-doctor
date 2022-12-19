@@ -70,7 +70,7 @@ class ConsultationController extends Controller
      */
     public function show(Consultation $consultation)
     {
-        return view('pages.backsite.master-data.consultation.show', compact('consultaion'));
+        return view('pages.backsite.master-data.consultation.show', compact('consultation'));
     }
 
     /**

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Backsite\ConfigPaymentController;
 use App\Http\Controllers\Backsite\ConsultationController;
 use Illuminate\Support\Facades\Route;
 
@@ -77,6 +78,9 @@ Route::group(['prefix' => 'backsite', 'as' => 'backsite.', 'middleware' => ['aut
 
     // doctor
     Route::resource('doctor', DoctorController::class);
+
+    // config-payment
+    Route::resource('config-payment', ConfigPaymentController::class);
 
 } );
 
