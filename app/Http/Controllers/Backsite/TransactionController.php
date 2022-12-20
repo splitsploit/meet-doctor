@@ -10,14 +10,10 @@ use Symfony\Component\HttpFoundation\Response;
 use Gate;
 use Auth;
 
-use App\Http\Requests\Role\StoreRoleRequest;
-use App\Http\Requests\Role\UpdateRoleRequest;
+use App\Models\Operational\Transaction;
 
-use App\Models\ManagementAccess\Role;
-
-class RoleController extends Controller
+class TransactionController extends Controller
 {
-
     public function __construct()
     {
         $this->middleware('auth');
@@ -30,11 +26,10 @@ class RoleController extends Controller
      */
     public function index()
     {
-        $data = Role::orderBy('created_at', 'desc')->get();
+        $data = Transaction::orderBy('created_at', 'desc')->get();
+        // dd($data);
 
-        dd($data);
-
-        return view('pages.backsite.management-access.role.index', compact('role'));
+        return view('pages.backsite.operational.transaction.index', compact('transaction'));
     }
 
     /**
@@ -53,15 +48,9 @@ class RoleController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreRoleRequest $request)
+    public function store(Request $request)
     {
-        $data = $request->all();
-
-        $data = Role::create($data);
-
-        alert()->success('Success Message', 'Successfully added new Role');
-
-        return redirect()->route('backsite.role.index');
+        //
     }
 
     /**
@@ -70,9 +59,9 @@ class RoleController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Role $role)
+    public function show(Transaction $transaction)
     {
-        return view('pages.backsite.management-access.role.index', compact('role'));
+        return view('pages.backsite.operational.transaction.index', compact('transaction'));
     }
 
     /**
@@ -81,10 +70,9 @@ class RoleController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Role $role)
+    public function edit($id)
     {
-        // dd($role);
-        return view('pages.backsite.management-access.role.edit', compact('role'));
+        //
     }
 
     /**
@@ -94,15 +82,9 @@ class RoleController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateRoleRequest $request, Role $role)
+    public function update(Request $request, $id)
     {
-        $data = $request->all();
-
-        $role->update($data);
-
-        alert()->success('Message Success', 'Successfully update new Role');
-
-        return redirect()->route('backsite.role.index');
+        //
     }
 
     /**
@@ -111,14 +93,8 @@ class RoleController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Role $role)
+    public function destroy($id)
     {
-        $data = Role::find(1);
-
-        $data->forceDelete();
-
-        alert()->success('Success Message', 'Successfully delete data');
-
-        return back();
+        //
     }
 }

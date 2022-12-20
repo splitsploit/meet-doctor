@@ -28,6 +28,13 @@
                         <li><a class="menu-item" href="type-user"><i></i><span data-i18n="Horizontal">Type User</span></a></li>
                     </ul>
                 </li>
+                <li class=" nav-item"><a href="#"><i class="la la-television"></i><span class="menu-title" data-i18n="Templates">Operational</span></a>
+                    <ul class="menu-content">
+                        <li><a class="menu-item" href="transaction"><i></i><span data-i18n="Vertical">Transaction</span></a><li>
+                        <li><a class="menu-item" href="doctor"><i></i><span data-i18n="Horizontal">Doctor</span></a></li>
+                        <li><a class="menu-item" href="appointment"><i></i><span data-i18n="Horizontal">Appointment</span></a></li>
+                    </ul>
+                </li>
                 <li class=" navigation-header"><span>Admin Panels</span><i class="la la-ellipsis-h" data-toggle="tooltip" data-placement="right" data-original-title="Admin Panels"></i>
                 </li>
                 <li class=" nav-item"><a href="../ecommerce-menu-template" target="_blank"><i class="la la-shopping-cart"></i><span class="menu-title" data-i18n="eCommerce">eCommerce</span></a>

@@ -12,6 +12,7 @@ use App\Http\Controllers\Backsite\DoctorController;
 use App\Http\Controllers\Backsite\PermissionController;
 use App\Http\Controllers\Backsite\RoleController;
 use App\Http\Controllers\Backsite\SpecialistController;
+use App\Http\Controllers\Backsite\TransactionController;
 use App\Http\Controllers\Backsite\UserController;
 use App\Http\Controllers\Backsite\TypeUserController;
 use App\Models\MasterData\Consultation;
@@ -81,6 +82,9 @@ Route::group(['prefix' => 'backsite', 'as' => 'backsite.', 'middleware' => ['aut
 
     // config-payment
     Route::resource('config-payment', ConfigPaymentController::class);
+
+    // transaction
+    Route::resource('transaction', TransactionController::class);
 
 } );
 
