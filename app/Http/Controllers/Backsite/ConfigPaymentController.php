@@ -28,7 +28,7 @@ class ConfigPaymentController extends Controller
      */
     public function index()
     {
-        $data = ConfigPayment::orderBy('created_at', 'desc')->get();
+        $config_payment = ConfigPayment::all();
 
         // dd($data);
 
@@ -64,7 +64,7 @@ class ConfigPaymentController extends Controller
      */
     public function show(ConfigPayment $configPayment)
     {
-        return view('pages.backsite.master-data.config-payment-show', compact('configPayment'));
+        return view('pages.backsite.master-data.config-payment-show', compact('config_payment'));
 
     }
 
@@ -76,7 +76,7 @@ class ConfigPaymentController extends Controller
      */
     public function edit(ConfigPayment $configPayment)
     {
-        return view('pages.backsite.master-data.config-payment-edit', compact('configPayment'));
+        return view('pages.backsite.master-data.config-payment-edit', compact('config_payment'));
     }
 
     /**
@@ -86,9 +86,15 @@ class ConfigPaymentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UpdateConfigPaymentRequest $request, ConfigPayment $config_payment)
     {
-        //
+        $data = $request->all();
+
+        $config_payment = ConfigPayment::updated($data);
+
+        alert()->success('Message Success', 'Successfully update data');
+        
+        return redirect()->route('backsite.config_payment.index');
     }
 
     /**

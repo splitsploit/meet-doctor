@@ -30,8 +30,8 @@ class SpecialistController extends Controller
      */
     public function index()
     {
-        $data = Specialist::orderBy('created_at', 'desc')->get();
-        dd($data);
+        $specialist = Specialist::orderBy('created_at', 'desc')->get();
+        // dd($data);
 
         return view('pages.backsite.master-data.specialist.index', compact('specialist'));
     }

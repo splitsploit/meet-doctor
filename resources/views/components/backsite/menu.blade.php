@@ -32,6 +32,7 @@
                     <ul class="menu-content">
                         <li><a class="menu-item" href="transaction"><i></i><span data-i18n="Vertical">Transaction</span></a><li>
                         <li><a class="menu-item" href="doctor"><i></i><span data-i18n="Horizontal">Doctor</span></a></li>
+                        <li><a class="menu-item" href="hospital-patient"><i></i><span data-i18n="Horizontal">Hospital Patient</span></a></li>
                         <li><a class="menu-item" href="appointment"><i></i><span data-i18n="Horizontal">Appointment</span></a></li>
                     </ul>
                 </li>

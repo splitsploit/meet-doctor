@@ -12,7 +12,7 @@ use Auth;
 
 use App\Models\Operational\Transaction;
 
-class TransactionController extends Controller
+class ReportTransactionController extends Controller
 {
     public function __construct()
     {
@@ -26,7 +26,7 @@ class TransactionController extends Controller
      */
     public function index()
     {
-        $data = Transaction::orderBy('created_at', 'desc')->get();
+        $transaction = Transaction::orderBy('created_at', 'desc')->get();
         // dd($data);
 
         return view('pages.backsite.operational.transaction.index', compact('transaction'));

@@ -30,8 +30,8 @@ class ConsultationController extends Controller
      */
     public function index()
     {
-        $data = Consultation::orderBy('created_at', 'desc')->get();
-        dd($data);
+        $consultation = Consultation::orderBy('created_at', 'desc')->get();
+        // dd($data);
 
         return view('pages.backsite.master-data.consultation.index', compact('consultation'));
     }
@@ -110,9 +110,9 @@ class ConsultationController extends Controller
      */
     public function destroy(Consultation $consultation)
     {
-        $data = Consultation::find(1);
+        // $data = Consultation::find(1);
 
-        $data->forceDelete();
+        $consultation->forceDelete();
 
         alert()->success('Success Message', 'Successfully delete data');
         

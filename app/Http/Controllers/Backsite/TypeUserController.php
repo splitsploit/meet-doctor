@@ -33,8 +33,10 @@ class TypeUserController extends Controller
 
         // $data = TypeUser::orderBy('created_at', 'desc')->limit(3)->get();
 
-        $data = TypeUser::all();
-        dd($data);
+        $type_user = TypeUser::all();
+
+        // dd($data);
+        
         return view('pages.backsite.management-access.type-user.index', compact('type_user'));
 
         // return view('pages.backsite.management-access.type-user.index');

@@ -14,6 +14,8 @@ use App\Http\Requests\Role\StoreRoleRequest;
 use App\Http\Requests\Role\UpdateRoleRequest;
 
 use App\Models\ManagementAccess\Role;
+use App\Models\ManagementAccess\Permission;
+use App\Models\ManagementAccess\PermissionRole;
 
 class RoleController extends Controller
 {
@@ -30,9 +32,9 @@ class RoleController extends Controller
      */
     public function index()
     {
-        $data = Role::orderBy('created_at', 'desc')->get();
+        $role = Role::orderBy('created_at', 'desc')->get();
 
-        dd($data);
+        // dd($data);
 
         return view('pages.backsite.management-access.role.index', compact('role'));
     }
@@ -72,6 +74,8 @@ class RoleController extends Controller
      */
     public function show(Role $role)
     {
+        $role->load('permission');
+
         return view('pages.backsite.management-access.role.index', compact('role'));
     }
 
@@ -83,7 +87,12 @@ class RoleController extends Controller
      */
     public function edit(Role $role)
     {
+        $permission = Permission::all();
+
+        $role->load('permission');
+
         // dd($role);
+
         return view('pages.backsite.management-access.role.edit', compact('role'));
     }
 
@@ -96,9 +105,16 @@ class RoleController extends Controller
      */
     public function update(UpdateRoleRequest $request, Role $role)
     {
-        $data = $request->all();
+        // cara 1
 
-        $role->update($data);
+        // $data = $request->all();
+        // $role->update($data);
+
+        // cara 2
+
+        $role->update($request->all());
+        
+        $role->permission()->sync($request->input('permission', []));
 
         alert()->success('Message Success', 'Successfully update new Role');
 
