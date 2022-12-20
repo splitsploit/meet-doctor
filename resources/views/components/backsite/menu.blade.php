@@ -15,25 +15,25 @@
                 </li>
                 <li class=" nav-item"><a href="#"><i class="la la-television"></i><span class="menu-title" data-i18n="Templates">Management Access</span></a>
                     <ul class="menu-content">
-                        <li><a class="menu-item" href="permission"><i></i><span data-i18n="Vertical">Permission</span></a><li>
-                        <li><a class="menu-item" href="role"><i></i><span data-i18n="Horizontal">Role</span></a></li>
-                        <li><a class="menu-item" href="user"><i></i><span data-i18n="Horizontal">User</span></a></li>
+                        <li><a class="menu-item" href="{{ route('backsite.permission.index') }}"><i></i><span data-i18n="Vertical">Permission</span></a><li>
+                        <li><a class="menu-item" href="{{ route('backsite.role.index') }}"><i></i><span data-i18n="Horizontal">Role</span></a></li>
+                        <li><a class="menu-item" href="{{ route('backsite.user.index') }}"><i></i><span data-i18n="Horizontal">User</span></a></li>
                     </ul>
                 </li>
                 <li class=" nav-item"><a href="#"><i class="la la-television"></i><span class="menu-title" data-i18n="Templates">Master Data</span></a>
                     <ul class="menu-content">
-                        <li><a class="menu-item" href="config-payment"><i></i><span data-i18n="Vertical">Config Payment</span></a><li>
-                        <li><a class="menu-item" href="consultation"><i></i><span data-i18n="Horizontal">Consultation</span></a></li>
-                        <li><a class="menu-item" href="specialist"><i></i><span data-i18n="Horizontal">Specialist</span></a></li>
-                        <li><a class="menu-item" href="type-user"><i></i><span data-i18n="Horizontal">Type User</span></a></li>
+                        <li><a class="menu-item" href="{{ route('backsite.config-payment.index') }}"><i></i><span data-i18n="Vertical">Config Payment</span></a><li>
+                        <li><a class="menu-item" href="{{ route('backsite.consultation.index') }}"><i></i><span data-i18n="Horizontal">Consultation</span></a></li>
+                        <li><a class="menu-item" href="{{ route('backsite.specialist.index') }}"><i></i><span data-i18n="Horizontal">Specialist</span></a></li>
+                        <li><a class="menu-item" href="{{ route('backsite.type-user.index') }}"><i></i><span data-i18n="Horizontal">Type User</span></a></li>
                     </ul>
                 </li>
                 <li class=" nav-item"><a href="#"><i class="la la-television"></i><span class="menu-title" data-i18n="Templates">Operational</span></a>
                     <ul class="menu-content">
-                        <li><a class="menu-item" href="transaction"><i></i><span data-i18n="Vertical">Transaction</span></a><li>
-                        <li><a class="menu-item" href="doctor"><i></i><span data-i18n="Horizontal">Doctor</span></a></li>
-                        <li><a class="menu-item" href="hospital-patient"><i></i><span data-i18n="Horizontal">Hospital Patient</span></a></li>
-                        <li><a class="menu-item" href="appointment"><i></i><span data-i18n="Horizontal">Appointment</span></a></li>
+                        <li><a class="menu-item" href="{{ route('backsite.transaction.index') }}"><i></i><span data-i18n="Vertical">Transaction</span></a><li>
+                        <li><a class="menu-item" href="{{ route('backsite.doctor.index') }}"><i></i><span data-i18n="Horizontal">Doctor</span></a></li>
+                        <li><a class="menu-item" href="{{ route('backsite.hospital-patient.index') }}"><i></i><span data-i18n="Horizontal">Hospital Patient</span></a></li>
+                        <li><a class="menu-item" href="{{ route('backsite.appointment.index') }}"><i></i><span data-i18n="Horizontal">Appointment</span></a></li>
                     </ul>
                 </li>
                 <li class=" navigation-header"><span>Admin Panels</span><i class="la la-ellipsis-h" data-toggle="tooltip" data-placement="right" data-original-title="Admin Panels"></i>
