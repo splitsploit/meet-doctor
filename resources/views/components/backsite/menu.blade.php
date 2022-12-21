@@ -3,15 +3,15 @@
     <div class="main-menu menu-fixed menu-light menu-accordion    menu-shadow " data-scroll-to-active="true">
         <div class="main-menu-content">
             <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
-                <li class=" nav-item"><a href="index.html"><i class="la la-home"></i><span class="menu-title" data-i18n="Dashboard">Dashboard</span><span class="badge badge badge-info badge-pill float-right mr-2">3</span></a>
-                    <ul class="menu-content">
+                <li class=" nav-item"><a href="{{ route('backsite.dashboard.index') }}"><i class="la la-home"></i><span class="menu-title" data-i18n="Dashboard">Dashboard</span><span class="badge badge badge-info badge-pill float-right mr-2">3</span></a>
+                    {{-- <ul class="menu-content">
                         <li class="active"><a class="menu-item" href="dashboard-ecommerce.html"><i></i><span data-i18n="eCommerce">eCommerce</span></a>
                         </li>
                         <li><a class="menu-item" href="dashboard-crypto.html"><i></i><span data-i18n="Crypto">Crypto</span></a>
                         </li>
                         <li><a class="menu-item" href="dashboard-sales.html"><i></i><span data-i18n="Sales">Sales</span></a>
                         </li>
-                    </ul>
+                    </ul> --}}
                 </li>
                 <li class=" nav-item"><a href="#"><i class="la la-television"></i><span class="menu-title" data-i18n="Templates">Management Access</span></a>
                     <ul class="menu-content">
@@ -36,7 +36,7 @@
                         <li><a class="menu-item" href="{{ route('backsite.appointment.index') }}"><i></i><span data-i18n="Horizontal">Appointment</span></a></li>
                     </ul>
                 </li>
-                <li class=" navigation-header"><span>Admin Panels</span><i class="la la-ellipsis-h" data-toggle="tooltip" data-placement="right" data-original-title="Admin Panels"></i>
+                {{-- <li class=" navigation-header"><span>Admin Panels</span><i class="la la-ellipsis-h" data-toggle="tooltip" data-placement="right" data-original-title="Admin Panels"></i>
                 </li>
                 <li class=" nav-item"><a href="../ecommerce-menu-template" target="_blank"><i class="la la-shopping-cart"></i><span class="menu-title" data-i18n="eCommerce">eCommerce</span></a>
                 </li>
@@ -89,8 +89,8 @@
                         <li><a class="menu-item" href="calendars-clndr.html"><i></i><span data-i18n="CLNDR">CLNDR</span></a>
                         </li>
                     </ul>
-                </li>
-                <li class=" navigation-header"><span>Pages</span><i class="la la-ellipsis-h" data-toggle="tooltip" data-placement="right" data-original-title="Pages"></i>
+                </li> --}}
+                {{-- <li class=" navigation-header"><span>Pages</span><i class="la la-ellipsis-h" data-toggle="tooltip" data-placement="right" data-original-title="Pages"></i>
                 </li>
                 <li class=" nav-item"><a href="news-feed.html"><i class="la la-newspaper-o"></i><span class="menu-title" data-i18n="News Feed">News Feed</span></a>
                 </li>
@@ -931,8 +931,8 @@
                 </li>
                 <li class=" nav-item"><a href="https://pixinvent.ticksy.com/" target="_blank"><i class="la la-support"></i><span class="menu-title" data-i18n="Raise Support">Raise Support</span></a>
                 </li>
-                <li class=" nav-item"><a href="https://pixinvent.com/modern-admin-clean-bootstrap-4-dashboard-html-template/documentation" target="_blank"><i class="la la-text-height"></i><span class="menu-title" data-i18n="Documentation">Documentation</span></a>
-                </li>
+                <li class=" nav-item"><a href="https://pixinvent.com/modern-admin-clean-bootstrap-4-dashboard-html-template/documentation" target="_blank"><i class="la la-text-height"></i><span class="menu-title" data-i18n="Documentation">Documentation</span></a> --}}
+                {{-- </li> --}}
             </ul>
         </div>
     </div>
