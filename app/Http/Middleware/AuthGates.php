@@ -6,6 +6,7 @@ use Closure;
 use Illuminate\Http\Request;
 
 use App\Models\ManagementAccess\Role;
+use App\Models\User;
 use Illuminate\Support\Facades\Gate;
 
 class AuthGates
@@ -28,7 +29,7 @@ class AuthGates
         // checking validation middleware
         // check system on or not
         // check user actiive or not
-        if(!app()->runningInConsole() && user)
+        if(!app()->runningInConsole() && $user)
         {
             $roles              = Role::with('permission')->get();
             $permissionsArray    = [];
@@ -40,7 +41,7 @@ class AuthGates
                 // looping for permission ( where table permission_role )
                 foreach($role->permission as $permissions)
                 {
-                    $permissionsArray[$permissions->title][] = $role->id,
+                    // $permissionsArray[$permissions->title][] = $role->id,
                 }
             }
 
