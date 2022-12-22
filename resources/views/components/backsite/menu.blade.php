@@ -13,29 +13,70 @@
                         </li>
                     </ul> --}}
                 </li>
-                <li class=" nav-item"><a href="#"><i class="la la-television"></i><span class="menu-title" data-i18n="Templates">Management Access</span></a>
-                    <ul class="menu-content">
-                        <li><a class="menu-item" href="{{ route('backsite.permission.index') }}"><i></i><span data-i18n="Vertical">Permission</span></a><li>
-                        <li><a class="menu-item" href="{{ route('backsite.role.index') }}"><i></i><span data-i18n="Horizontal">Role</span></a></li>
-                        <li><a class="menu-item" href="{{ route('backsite.user.index') }}"><i></i><span data-i18n="Horizontal">User</span></a></li>
-                    </ul>
-                </li>
-                <li class=" nav-item"><a href="#"><i class="la la-television"></i><span class="menu-title" data-i18n="Templates">Master Data</span></a>
-                    <ul class="menu-content">
-                        <li><a class="menu-item" href="{{ route('backsite.config-payment.index') }}"><i></i><span data-i18n="Vertical">Config Payment</span></a><li>
-                        <li><a class="menu-item" href="{{ route('backsite.consultation.index') }}"><i></i><span data-i18n="Horizontal">Consultation</span></a></li>
-                        <li><a class="menu-item" href="{{ route('backsite.specialist.index') }}"><i></i><span data-i18n="Horizontal">Specialist</span></a></li>
-                        <li><a class="menu-item" href="{{ route('backsite.type-user.index') }}"><i></i><span data-i18n="Horizontal">Type User</span></a></li>
-                    </ul>
-                </li>
-                <li class=" nav-item"><a href="#"><i class="la la-television"></i><span class="menu-title" data-i18n="Templates">Operational</span></a>
-                    <ul class="menu-content">
-                        <li><a class="menu-item" href="{{ route('backsite.transaction.index') }}"><i></i><span data-i18n="Vertical">Transaction</span></a><li>
-                        <li><a class="menu-item" href="{{ route('backsite.doctor.index') }}"><i></i><span data-i18n="Horizontal">Doctor</span></a></li>
-                        <li><a class="menu-item" href="{{ route('backsite.hospital-patient.index') }}"><i></i><span data-i18n="Horizontal">Hospital Patient</span></a></li>
-                        <li><a class="menu-item" href="{{ route('backsite.appointment.index') }}"><i></i><span data-i18n="Horizontal">Appointment</span></a></li>
-                    </ul>
-                </li>
+
+                {{-- @can('management-access') --}}
+                    <li class=" nav-item"><a href="#"><i class="la la-television"></i><span class="menu-title" data-i18n="Templates">Management Access</span></a>
+                        <ul class="menu-content">
+                            {{-- @can('permission_access') --}}
+                                <li><a class="menu-item" href="{{ route('backsite.permission.index') }}"><i></i><span data-i18n="Vertical">Permission</span></a><li>
+                            {{-- @endcan --}}
+                            
+                            {{-- @can('role_access') --}}
+                                <li><a class="menu-item" href="{{ route('backsite.role.index') }}"><i></i><span data-i18n="Horizontal">Role</span></a></li>
+                            {{-- @endcan --}}
+
+                            {{-- @can('type_user_access') --}}
+                                <li><a class="menu-item" href="{{ route('backsite.type-user.index') }}"><i></i><span data-i18n="Horizontal">Type User</span></a></li>
+                            {{-- @endcan --}}
+                            
+                            {{-- @can('user_access') --}}
+                                <li><a class="menu-item" href="{{ route('backsite.user.index') }}"><i></i><span data-i18n="Horizontal">User</span></a></li>
+                            {{-- @endcan --}}
+
+                        </ul>
+                    </li>
+                {{-- @endcan --}}
+    
+                {{-- @can('master-data') --}}
+                    <li class=" nav-item"><a href="#"><i class="la la-television"></i><span class="menu-title" data-i18n="Templates">Master Data</span></a>
+                        <ul class="menu-content">
+                            {{-- @can('config_payment_access') --}}
+                                <li><a class="menu-item" href="{{ route('backsite.config-payment.index') }}"><i></i><span data-i18n="Vertical">Config Payment</span></a><li>
+                            {{-- @endcan --}}
+
+                            {{-- @can('consultation_access') --}}
+                                <li><a class="menu-item" href="{{ route('backsite.consultation.index') }}"><i></i><span data-i18n="Horizontal">Consultation</span></a></li>
+                            {{-- @endcan --}}
+                            
+                            {{-- @can('specialist_access') --}}
+                                <li><a class="menu-item" href="{{ route('backsite.specialist.index') }}"><i></i><span data-i18n="Horizontal">Specialist</span></a></li>
+                            {{-- @endcan --}}
+                        </ul>
+                    </li>
+                {{-- @endcan --}}
+                
+                {{-- @can('operational') --}}
+                    <li class=" nav-item"><a href="#"><i class="la la-television"></i><span class="menu-title" data-i18n="Templates">Operational</span></a>
+                        <ul class="menu-content">
+                            {{-- @can('transaction_access') --}}
+                                <li><a class="menu-item" href="{{ route('backsite.transaction.index') }}"><i></i><span data-i18n="Vertical">Transaction</span></a><li>
+                            {{-- @endcan --}}
+
+                            {{-- @can('doctor_accees') --}}
+                                <li><a class="menu-item" href="{{ route('backsite.doctor.index') }}"><i></i><span data-i18n="Horizontal">Doctor</span></a></li>
+                            {{-- @endcan --}}
+
+                            {{-- @can('hospital_patient_access') --}}
+                                <li><a class="menu-item" href="{{ route('backsite.hospital-patient.index') }}"><i></i><span data-i18n="Horizontal">Hospital Patient</span></a></li>
+                            {{-- @endcan --}}
+
+                            {{-- @can('appointment_access') --}}
+                                <li><a class="menu-item" href="{{ route('backsite.appointment.index') }}"><i></i><span data-i18n="Horizontal">Appointment</span></a></li>
+                            {{-- @endcan --}}
+                        </ul>
+                    </li>
+                {{-- @endcan --}}
+                
                 {{-- <li class=" navigation-header"><span>Admin Panels</span><i class="la la-ellipsis-h" data-toggle="tooltip" data-placement="right" data-original-title="Admin Panels"></i>
                 </li>
                 <li class=" nav-item"><a href="../ecommerce-menu-template" target="_blank"><i class="la la-shopping-cart"></i><span class="menu-title" data-i18n="eCommerce">eCommerce</span></a>

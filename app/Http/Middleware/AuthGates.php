@@ -45,6 +45,7 @@ class AuthGates
                 }
             }
 
+            // check user role
             foreach($permissionsArray as $title => $roles)
             {
                 Gate::define($title, function(\App\Models\User $user)
@@ -57,6 +58,7 @@ class AuthGates
             }
         }
 
+        // return all middleware
         return $next($request);
     }
 }
