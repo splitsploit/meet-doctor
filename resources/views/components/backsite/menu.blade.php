@@ -62,9 +62,9 @@
                                 <li><a class="menu-item" href="{{ route('backsite.transaction.index') }}"><i></i><span data-i18n="Vertical">Transaction</span></a><li>
                             {{-- @endcan --}}
 
-                            {{-- @can('doctor_accees') --}}
+                            @can('doctor_access')
                                 <li><a class="menu-item" href="{{ route('backsite.doctor.index') }}"><i></i><span data-i18n="Horizontal">Doctor</span></a></li>
-                            {{-- @endcan --}}
+                            @endcan
 
                             {{-- @can('hospital_patient_access') --}}
                                 <li><a class="menu-item" href="{{ route('backsite.hospital-patient.index') }}"><i></i><span data-i18n="Horizontal">Hospital Patient</span></a></li>
