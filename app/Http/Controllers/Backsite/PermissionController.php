@@ -10,7 +10,11 @@ use Symfony\Component\HttpFoundation\Response;
 use Gate;
 use Auth;
 
+// use model here
 use App\Models\ManagementAccess\Permission;
+use App\Models\ManagementAccess\PermissionRole;
+use App\Models\ManagementAccess\Role;
+use App\Models\ManagementAccess\RoleUser;
 
 class PermissionController extends Controller
 {
@@ -27,9 +31,11 @@ class PermissionController extends Controller
      */
     public function index()
     {
+        // abort_if(Gate::denies('permission_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+
         $permission = Permission::orderBy('created_at', 'desc')->get();
 
-        // dd($data);
+        // dd($permission);
 
         return view('pages.backsite.management-access.permission.index', compact('permission'));
     }
