@@ -11,28 +11,28 @@ class Role extends Model
     // use HasFactory;
     use SoftDeletes;
 
-    // Declare table
+    // declare table name
     public $table = 'role';
 
-    // Type field must be date
-    protected $dates =  [
+    // this field must type date yyyy-mm-dd hh:mm:ss
+    protected $dates = [
         'created_at',
         'updated_at',
-        'deleted_at'
+        'deleted_at',
     ];
 
-    // Declare fillable
-    protected $fillabla = [
+    // declare fillable fields
+    protected $fillable = [
         'title',
         'created_at',
         'updated_at',
-        'deleted_at'
+        'deleted_at',
     ];
 
     // many to many
     public function user()
     {
-        return $this->belongsToMany(User::class); //App\Models\User
+        return $this->belongsToMany(User::class);
     }
 
     public function permission()
@@ -40,11 +40,14 @@ class Role extends Model
         return $this->belongsToMany('App\Models\ManagementAccess\Permission');
     }
 
-    public function role_user(){
+    // one to many
+    public function role_user()
+    {
         return $this->hasMany('App\Models\ManagementAccess\RoleUser', 'role_id');
     }
 
-    public function permission_role(){
+    public function permission_role()
+    {
         return $this->hasMany('App\Models\ManagementAccess\PermissionRole', 'role_id');
     }
 }
