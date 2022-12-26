@@ -13,9 +13,12 @@ use Auth;
 use App\Http\Requests\Role\StoreRoleRequest;
 use App\Http\Requests\Role\UpdateRoleRequest;
 
+// use model here
 use App\Models\ManagementAccess\Role;
+use App\Models\ManagementAccess\RoleUser;
 use App\Models\ManagementAccess\Permission;
 use App\Models\ManagementAccess\PermissionRole;
+
 
 class RoleController extends Controller
 {
