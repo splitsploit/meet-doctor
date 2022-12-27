@@ -79,7 +79,7 @@ class RoleController extends Controller
     {
         $role->load('permission');
 
-        return view('pages.backsite.management-access.role.index', compact('role'));
+        return view('pages.backsite.management-access.role.show', compact('role'));
     }
 
     /**
