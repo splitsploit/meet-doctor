@@ -96,7 +96,7 @@ class RoleController extends Controller
 
         // dd($role);
 
-        return view('pages.backsite.management-access.role.edit', compact('role'));
+        return view('pages.backsite.management-access.role.edit', compact('permission', 'role'));
     }
 
     /**
@@ -132,11 +132,11 @@ class RoleController extends Controller
      */
     public function destroy(Role $role)
     {
-        $data = Role::find(1);
+        // $data = Role::find(1);
 
-        $data->forceDelete();
+        $role->forceDelete();
 
-        alert()->success('Success Message', 'Successfully delete data');
+        alert()->success('Success Message', 'Successfully delete role');
 
         return back();
     }
